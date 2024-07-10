@@ -27,6 +27,7 @@ function App() {
   ) : (
     <>
       <Routes>
+      <Route path="/" element={<SignIn />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/myvehicle" element={<MyVehicle />} />
         <Route path="/myprofile" element={<MyProfile />} />
