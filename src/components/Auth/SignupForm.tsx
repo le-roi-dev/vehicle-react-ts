@@ -1,71 +1,47 @@
 import { Link } from "react-router-dom";
+import CustomizedInput from "../CustomizedComponent/CustomizedInput";
+import userIcon from '../../images/icons/user.svg';
+import security from '../../images/icons/security.svg';
+import invisibleEye from '../../images/icons/invisibleEye.svg';
+import emailIcon from '../../images/icons/email.svg';
 
 export default function SignupForm() {
     return (
         <form>
             <div className='text-4xl mt-2 font-medium'>Sign Up</div>
             <div className='h-[5px] w-[140px] mt-2 rounded-full bg-orange-400'></div>
-            <div className='mt-12'>
-                <div className="relative mb-4">
-                    <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                        <svg className="w-7 h-7 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#f28305" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        className="border-none shadow-lg text-gray-900 text-sm rounded-2xl focus:ring-blue-5 w-full ps-12 p-5  dark:bg-graygray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500"
-                        placeholder="Username" />
-                </div>
-                <div className="relative mb-4">
-                    <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                        <svg className="w-7 h-7 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#f28305" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <input
-                        type="text"
-                        id="email"
-                        name="email"
-                        className="border-none shadow-lg text-gray-900 text-sm rounded-2xl focus:ring-blue-5 w-full ps-12 p-5  dark:bg-graygray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500"
-                        placeholder="Email" />
-                </div>
-                <div className="relative mb-6">
-                    <div className="absolute inset-y-0 start-0 flex items-center ps-4 pointer-events-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24" fill='#f28305'>
-                            <path d="M 12 1 C 8.6761905 1 6 3.6761905 6 7 L 6 8 C 4.9 8 4 8.9 4 10 L 4 20 C 4 21.1 4.9 22 6 22 L 18 22 C 19.1 22 20 21.1 20 20 L 20 10 C 20 8.9 19.1 8 18 8 L 18 7 C 18 3.6761905 15.32381 1 12 1 z M 12 3 C 14.27619 3 16 4.7238095 16 7 L 16 8 L 8 8 L 8 7 C 8 4.7238095 9.7238095 3 12 3 z M 8 14 C 8.55 14 9 14.45 9 15 C 9 15.55 8.55 16 8 16 C 7.45 16 7 15.55 7 15 C 7 14.45 7.45 14 8 14 z M 12 14 C 12.55 14 13 14.45 13 15 C 13 15.55 12.55 16 12 16 C 11.45 16 11 15.55 11 15 C 11 14.45 11.45 14 12 14 z M 16 14 C 16.55 14 17 14.45 17 15 C 17 15.55 16.55 16 16 16 C 15.45 16 15 15.55 15 15 C 15 14.45 15.45 14 16 14 z"></path>
-                        </svg>
-                    </div>
-                    <input
-                        type="password"
-                        id="password1"
-                        name="password1"
-                        className="border-none shadow-lg text-gray-900 text-sm rounded-2xl focus:ring-blue-5 w-full ps-12 p-5  dark:bg-graygray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500"
-                        placeholder="Create Password"
-                    />
-                    <div className="absolute inset-y-0 end-5 flex items-center ps-4 pointer-events-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill='grey'><path d="M19.604 2.562l-3.346 3.137c-1.27-.428-2.686-.699-4.243-.699-7.569 0-12.015 6.551-12.015 6.551s1.928 2.951 5.146 5.138l-2.911 2.909 1.414 1.414 17.37-17.035-1.415-1.415zm-6.016 5.779c-3.288-1.453-6.681 1.908-5.265 5.206l-1.726 1.707c-1.814-1.16-3.225-2.65-4.06-3.66 1.493-1.648 4.817-4.594 9.478-4.594.927 0 1.796.119 2.61.315l-1.037 1.026zm-2.883 7.431l5.09-4.993c1.017 3.111-2.003 6.067-5.09 4.993zm13.295-4.221s-4.252 7.449-11.985 7.449c-1.379 0-2.662-.291-3.851-.737l1.614-1.583c.715.193 1.458.32 2.237.32 4.791 0 8.104-3.527 9.504-5.364-.729-.822-1.956-1.99-3.587-2.952l1.489-1.46c2.982 1.9 4.579 4.327 4.579 4.327z" /></svg>
-                    </div>
-                </div>
-                <div className="relative mb-6">
-                    <div className="absolute inset-y-0 start-0 flex items-center ps-4 pointer-events-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24" fill='#f28305'>
-                            <path d="M 12 1 C 8.6761905 1 6 3.6761905 6 7 L 6 8 C 4.9 8 4 8.9 4 10 L 4 20 C 4 21.1 4.9 22 6 22 L 18 22 C 19.1 22 20 21.1 20 20 L 20 10 C 20 8.9 19.1 8 18 8 L 18 7 C 18 3.6761905 15.32381 1 12 1 z M 12 3 C 14.27619 3 16 4.7238095 16 7 L 16 8 L 8 8 L 8 7 C 8 4.7238095 9.7238095 3 12 3 z M 8 14 C 8.55 14 9 14.45 9 15 C 9 15.55 8.55 16 8 16 C 7.45 16 7 15.55 7 15 C 7 14.45 7.45 14 8 14 z M 12 14 C 12.55 14 13 14.45 13 15 C 13 15.55 12.55 16 12 16 C 11.45 16 11 15.55 11 15 C 11 14.45 11.45 14 12 14 z M 16 14 C 16.55 14 17 14.45 17 15 C 17 15.55 16.55 16 16 16 C 15.45 16 15 15.55 15 15 C 15 14.45 15.45 14 16 14 z"></path>
-                        </svg>
-                    </div>
-                    <input
-                        type="password"
-                        id="password2"
-                        name="password2"
-                        className="border-none shadow-lg text-gray-900 text-sm rounded-2xl focus:ring-blue-5 w-full ps-12 p-5  dark:bg-graygray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500"
-                        placeholder="Confirm Password"
-                    />
-                    <div className="absolute inset-y-0 end-5 flex items-center ps-4 pointer-events-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill='grey'><path d="M19.604 2.562l-3.346 3.137c-1.27-.428-2.686-.699-4.243-.699-7.569 0-12.015 6.551-12.015 6.551s1.928 2.951 5.146 5.138l-2.911 2.909 1.414 1.414 17.37-17.035-1.415-1.415zm-6.016 5.779c-3.288-1.453-6.681 1.908-5.265 5.206l-1.726 1.707c-1.814-1.16-3.225-2.65-4.06-3.66 1.493-1.648 4.817-4.594 9.478-4.594.927 0 1.796.119 2.61.315l-1.037 1.026zm-2.883 7.431l5.09-4.993c1.017 3.111-2.003 6.067-5.09 4.993zm13.295-4.221s-4.252 7.449-11.985 7.449c-1.379 0-2.662-.291-3.851-.737l1.614-1.583c.715.193 1.458.32 2.237.32 4.791 0 8.104-3.527 9.504-5.364-.729-.822-1.956-1.99-3.587-2.952l1.489-1.46c2.982 1.9 4.579 4.327 4.579 4.327z" /></svg>
-                    </div>
-                </div>
+            <div className='mt-12 flex flex-col gap-4'>
+                <CustomizedInput
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Username"
+                    startIcon={<img src={userIcon} alt="User" />}
+                />
+                <CustomizedInput
+                    type="text"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                    startIcon={<img src={emailIcon} alt="Email" />}
+                />
+                <CustomizedInput
+                    type="password"
+                    id="password1"
+                    name="password1"
+                    placeholder="Create Password"
+                    startIcon={<img src={security} alt="Password1" />}
+                    endIcon={<img src={invisibleEye} alt="InvisibleEye1" />}
+                />
+
+                <CustomizedInput
+                    type="password"
+                    id="password2"
+                    name="password2"
+                    placeholder="Confirm Password"
+                    startIcon={<img src={security} alt="Password2" />}
+                    endIcon={<img src={invisibleEye} alt="InvisibleEye2" />}
+                />
 
                 <Link to={'/auth/signin'} className='block bg-orange-400 w-full py-4 text-center text-white mt-6 rounded-2xl'>Signup</Link>
                 <div className="py-10 flex items-center text-xs before:flex-1 before:border-t before:border-gray-200 before:me-6 after:flex-1 after:border-t after:border-gray-200 after:ms-6 dark:text-neutral-500 dark:before:border-neutral-600 dark:after:border-neutral-600">Or Signup with</div>

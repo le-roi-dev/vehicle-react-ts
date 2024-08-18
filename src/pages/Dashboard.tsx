@@ -1,4 +1,5 @@
-import DashboardTabs from "../components/Dashboard/DashboardTabs";
+import { Link } from "react-router-dom";
+import ClaimContainer from "../components/Dashboard/ClaimContainer";
 import DefaultLayout from "../layout/DefaultLayout";
 
 const Dashboard = () => {
@@ -15,10 +16,10 @@ const Dashboard = () => {
         <div className="bg-white mt-6 rounded-2xl">
           <div className="flex justify-between items-center py-3 px-7">
             <div className="font-bold text-2xl">My Claims</div>
-            <button className="bg-orange-400 px-7 py-3 text-white rounded-lg text-base">New Claim</button>
+            <Link to={'/dashboard/newclaim'} className="bg-orange-400 px-7 py-3 text-white rounded-lg text-base">New Claim</Link>
           </div>
           <div className="px-7">
-            <DashboardTabs />
+            <ClaimContainer />
           </div>
         </div>
       </div>
