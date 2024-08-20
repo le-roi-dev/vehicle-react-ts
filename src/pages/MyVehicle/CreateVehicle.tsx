@@ -54,7 +54,7 @@ const CreateVehicle = () => {
     }
     return (
         <DefaultLayout>
-            <div className="bg-white rounded-2xl p-8">
+            <div className="bg-white rounded-2xl p-16">
                 <div className="">
                     <div className='text-4xl font-bold'>My Vehicle</div>
                     <div className='h-[5px] w-[180px] mt-2 rounded-full bg-orange-400'></div>

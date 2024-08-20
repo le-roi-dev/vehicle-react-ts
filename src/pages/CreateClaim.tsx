@@ -51,7 +51,7 @@ const CreateClaim = () => {
 
     return (
         <DefaultLayout>
-            <div className="bg-white p-8">
+            <div className="bg-white p-16">
                 <div className="mb-10">
                     <div className="text-4xl font-bold">
                         Add New Claim

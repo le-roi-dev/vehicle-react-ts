@@ -67,7 +67,7 @@ const Step2 = ({ handleNextClick, handlePreviousClick }: Step2Props) => {
                 </RadioGroup>
             </FormControl>
             <div className="flex justify-between">
-                <button onClick={handlePreviousClick} className='text-orange-500 bg-orange-100 px-15 py-2 text-lg mt-8 rounded-2xl'>Previous</button>
+                <div></div>
                 <button onClick={handleNextClick} className='bg-orange-400 px-10 py-3 text-lg mt-8 text-white rounded-lg'>Next</button>
             </div>
         </>
