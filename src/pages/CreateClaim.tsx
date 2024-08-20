@@ -3,18 +3,23 @@ import DashboardTabs from "../components/Dashboard/ClaimContainer";
 import DefaultLayout from "../layout/DefaultLayout";
 import CustomizedSteppers from "../components/CreateClaim/Stepper";
 import Step1 from "../components/CreateClaim/Step1";
-import Step2 from "../components/CreateClaim/Step2";
+import Step2 from "../components/CreateClaim/Step2/Step2";
 import Step3 from "../components/CreateClaim/Step3/Step3";
 import Step4 from "../components/CreateClaim/Step4";
 import Step5 from "../components/CreateClaim/Step5";
 import Step6 from "../components/CreateClaim/Step6";
+import useClaimItem from "../hooks/useClaimItems";
 
 const CreateClaim = () => {
     const [activeStep, setActiveStep] = useState(0);
+    const [selectedItem, setSelectedItem] = useState<any>('');
+    const [claimItem, setClaimItem] = useClaimItem();
+
     const steps = ['Initial/Vehicle Info', 'Incident/Driver Info', 'Series of Questions', 'Review', 'Submission'];
     const handleNextClick = () => {
         let nextStep = activeStep + 1;
         setActiveStep(nextStep);
+        console.log(claimItem);
     }
 
     const handlePreviousClick = () => {

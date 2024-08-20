@@ -7,7 +7,7 @@ interface Step6Props {
 }
 
 
-const Step6 = () => {
+const Step6 = (props: Step6Props) => {
     return (
         <>
             <div className="text-4xl font-medium">Application Submission</div>

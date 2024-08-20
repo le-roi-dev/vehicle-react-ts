@@ -1,52 +1,43 @@
 import { FormControl, RadioGroup } from "@mui/material";
 import CustomizedRadio from "../CustomizedComponent/CustomizedRadio";
+import { useState } from "react";
+import useClaimItem from "../../hooks/useClaimItems";
+import CLAIMITEM from "../../types/claimItem";
 
 interface Step2Props {
-    handleNextClick: () => void;
-    handlePreviousClick: () => void,
+    handleNextClick?: () => void;
+    handlePreviousClick?: () => void,
 }
 
-const items = [
+const items: CLAIMITEM[] = [
     {
-        label: (
-            <div className='pl-4'>
-                <div className='text-md py-0.5'>2006 TOYOTA SIENNA VAN 2WD</div>
-                <div className='text-sm text-[#8f939c]'>VIN: 5TDZA22C26S417956</div>
-                <div className='text-sm text-[#8f939c]'>Policy #410683522364</div>
-            </div>
-        ),
-        value: '2006 TOYOTA SIENNA VAN 2WD'
+        name: '2006 TOYOTA SIENNA VAN 2WD',
+        vin: '5TDZA22C26S417956',
+        policy: '#410683522364'
     },
     {
-        label: (
-            <div className='pl-4'>
-                <div className='text-md py-0.5'>2013 NISSAN SENTRA 4D</div>
-                <div className='text-sm text-[#8f939c]'>VIN: 3N1AB7AP7DL637398</div>
-                <div className='text-sm text-[#8f939c]'>Policy #410693522364</div>
-            </div>
-        ),
-        value: '2013 NISSAN SENTRA 4D'
+        name: '2013 NISSAN SENTRA 4D',
+        vin: '3N1AB7AP7DL637398',
+        policy: '#410693522364'
     },
     {
-        label: (
-            <div className='pl-4'>
-                <div className='text-md py-0.5'>Vehicle is not on policy</div>
-            </div>
-        ),
-        value: 'Vehicle is not on policy'
+        name: 'Vehicle is not on policy',
     },
     {
-        label: (
-            <div className='pl-4'>
-                <div className='text-md py-0.5'>1533 Liatris Dr</div>
-                <div className='text-sm text-[#8f939c]'>Policy: $410728790915</div>
-            </div>
-        ),
-        value: '1533 Liatris Dr'
+        name: '1533 Liatris Dr',
+        policy: '#410728790915'
     },
 ]
 
+
 const Step2 = ({ handleNextClick, handlePreviousClick }: Step2Props) => {
+
+    const [claimItem, setClaimItem] = useClaimItem();
+
+    const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const item = items.find(i => i.name == event.target.value);
+        setClaimItem(item as CLAIMITEM);
+    };
 
     return (
         <>
@@ -60,7 +51,18 @@ const Step2 = ({ handleNextClick, handlePreviousClick }: Step2Props) => {
                     className='flex flex-col gap-6'
                 >
                     {
-                        items.map(item => <CustomizedRadio label={item.label} value={item.value} />)
+                        items.map(item =>
+                            <CustomizedRadio
+                                onChange={handleRadioChange}
+                                label={
+                                    <div className='pl-4'>
+                                        <div className='text-md py-0.5'>{item.name}</div>
+                                        {item.vin && <div className='text-sm text-[#8f939c]'>VIN: {item.vin}</div>}
+                                        {item.policy && <div className='text-sm text-[#8f939c]'>Policy: {item.policy}</div>}
+                                    </div>
+                                }
+                                value={item.name}
+                            />)
                     }
                 </RadioGroup>
             </FormControl>

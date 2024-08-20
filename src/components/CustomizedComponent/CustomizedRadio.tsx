@@ -7,17 +7,19 @@ import Radio from '@mui/material/Radio';
 
 interface CustomizedRadioProps {
     label: string | React.ReactNode,
-    value: string | boolean
+    value: any,
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 
-const CustomizedRadio = ({ label, value }: CustomizedRadioProps) => {
+const CustomizedRadio = ({ label, value, onChange }: CustomizedRadioProps) => {
 
     return (
         <FormControlLabel
             value={value}
             control={
                 <Radio
+                    onChange={onChange}
                     sx={{
                         color: orange[400],
                         '&.Mui-checked': {
